@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2Pro Africa - Dashboard</title>
+    <link rel="stylesheet" href="css/editprofilecss.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/topic-video.css">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row main-row-container">
+            <div class="col-md-2 sidebar">
+                <div class="logo">
+                    <button class="toggle-button"><span class="iconify" data-icon="icon-park-outline:hamburger-button"
+                            data-inline="false" style="font-size: 30px;"></span></button>
+                    <img src="images/L2-PRO-LOGO-Saudi.png" alt="L2Pro Africa Logo">
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard.html"><span><span class="iconify" data-icon="tabler:home"
+                                        data-inline="false" style="font-size: 18px; margin-right: 15px;"></span>
+                                    Home</span></a></li>
+                        <li><a href="profile.html"><span><span class="iconify" data-icon="solar:user-linear"
+                                        data-inline="false" style="font-size: 18px; margin-right: 15px;"></span>My
+                                    Profile</span><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                        <li class="active"><a href="courses.html"><span><span class="iconify"
+                                        data-icon="icon-park-outline:degree-hat" data-inline="false"
+                                        style="font-size: 18px; margin-right: 15px;"></span>Courses</span><i
+                                    class="fas fa-chevron-right"></i></a>
+                        </li>
+                        <li><a href="feedback.html"><span><span class="iconify" data-icon="bxs:conversation"
+                                        data-inline="false"
+                                        style="font-size: 18px; margin-right: 15px;"></span>Feedback</span><i
+                                    class="fas fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-10" style="padding: 0px 20px;">
+                <header class="header">
+                    <div class="header-upper row">
+                        <div class="header-left col-md-6">
+                            <h1>{Name of Chapter}</h1>
+                            <div class="breadcrumb">
+                                Home &gt; Courses &gt; {Name of Course} &gt; {Name of Chapter}
+                            </div>
+                        </div>
+                        <div class="header-right col-md-6">
+                            <select name="" id="" class="lang-dropdown">
+                                <option value="english">English</option>
+                                <option value="arabic">Arabic</option>
+                            </select>
+                            <div class="user-controls">
+                                <span class="iconify" data-icon="mdi:bell" data-inline="false"
+                                    style="font-size: 18px; margin-right: 15px;color:#f5f5f5"></span>
+                                <div class="user-profile">
+                                    <img src="images/mask-group@2x.png" alt="User Avatar">
+                                    <span>Paul</span>
+                                    <span class="iconify" data-icon="mdi:arrow-down-drop" data-inline="false"
+                                        style="font-size: 25px; margin-right: 15px;color: #f5f5f5;"></span>
+                                </div>
+                                <div class="profile-menu">
+                                    <ul class="menu-options">
+                                        <li class="menu-option">
+                                            <img src="images/My profile.png" width="20%" style="margin-right:15px;">
+                                            <a href="profile.html">Profile</a>
+                                        </li>
+                                        <li class="menu-option">
+                                            <span class="iconify" data-icon="material-symbols:logout-rounded"
+                                                data-inline="false"
+                                                style="font-size: 18px; margin-right: 15px; color: #000;"></span>
+                                            <a href="logout.html">Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="container-fluid" style="padding: 0px;">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="courses-heading">{Name of Chapter}</h2>
+                            <hr>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-primary sidebar-toggle-btn" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebar" aria-controls="sidebar">
+                        <span>☰ Content</span>
+                        <span class="iconify" data-icon="bxs:down-arrow" data-inline="false" style="font-size: 15px;"
+                            id="video-sidebar-toggle-icon"></span>
+                    </button>
+                    <div class="row flex-wrap" style="padding: 0px 12px;">
+
+                        <div class="col-12 col-md-3 video-sidebar bg-light p-0">
+                            <!-- <h5 class="mb-3">Course Videos</h5> -->
+                            <ul class="list-group" id="videoList">
+                                <li>
+                                    <button class="list-group-item video-title" data-video="video1.mp4" disabled
+                                        style="display: flex; justify-content: space-between">
+                                        <span>Introduction to the Course</span> <img src="./images/tick.svg"
+                                            alt=""></button>
+                                </li>
+                                <li><button class="list-group-item video-title" data-video="video2.mp4">Setting Up
+                                        Environment</button>
+                                </li>
+                                <li class="list-group-item video-title" data-video="video3.mp4">Understanding Basics
+                                </li>
+                                <li class="list-group-item video-title" data-video="video4.mp4">Advanced Topics</li>
+                                <li class="list-group-item video-title" data-video="video5.mp4">Conclusion</li>
+                            </ul>
+                        </div>
+                        <div class="col p-0">
+                            <div class="mb-3">
+                                <video id="mainVideo" controls>
+                                    <source src="video1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <h5 id="videoTitle">Introduction to the Course</h5>
+                            <!-- <p>Watch the video to continue your course progress.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.user-profile').addEventListener('click', function () {
+            const menu = document.querySelector('.profile-menu');
+            const arrow = document.querySelector('.user-profile i');
+
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+                arrow.classList.remove('fa-chevron-down');
+                arrow.classList.add('fa-chevron-up');
+            } else {
+                menu.style.display = 'none';
+                arrow.classList.remove('fa-chevron-up');
+                arrow.classList.add('fa-chevron-down');
+            }
+        });
+
+        document.querySelector('.toggle-button').addEventListener('click', function () {
+            const sidebar = document.querySelector('.sidebar-nav');
+            if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+                sidebar.style.display = 'block';
+            }
+            else {
+                sidebar.style.display = 'none';
+            }
+        })
+
+        const videoList = document.getElementById('videoList');
+        const mainVideo = document.getElementById('mainVideo');
+        const videoTitle = document.getElementById('videoTitle');
+
+        videoList.addEventListener('click', function (e) {
+            if (e.target && e.target.matches('button.video-title')) {
+                const src = e.target.getAttribute('data-video');
+                const title = e.target.textContent;
+                mainVideo.querySelector('source').setAttribute('src', src);
+                mainVideo.load();
+                videoTitle.textContent = title;
+
+                // Highlight active video
+                document.querySelectorAll('.video-title').forEach(item => {
+                    item.classList.remove('active');
+                });
+                e.target.classList.add('active');
+            }
+        });
+
+        document.querySelector('.sidebar-toggle-btn').addEventListener('click', function () {
+            const sidebar = document.querySelector('.video-sidebar');
+            if (sidebar.style.display === 'block' || sidebar.style.display === '') {
+                sidebar.style.display = 'none';
+            }
+            else {
+                sidebar.style.display = 'block';
+            }
+        })
+
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
